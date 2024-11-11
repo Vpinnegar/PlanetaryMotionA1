@@ -225,5 +225,5 @@ plt.legend()
 plt.xlabel("Latitude $(\circ)$")
 plt.ylabel("Longitude $(\circ)$")
 
-""" The geodetic latitude and Longitude are both 0 degrees, corresponding to the point at 245667.5
+""" The geodetic latitude and Longitude are both 0 degrees with an altitude of 301863.0 m, corresponding to the point at 245667.5
 which is when the RA and DEC are both 0 """
