@@ -217,5 +217,6 @@ k,l,j = cartesian_to_geodetic(geocentric[0]*1000, geocentric[1]*1000,geocentric[
 # print(v,l)
 # print(b, j)
 """ The output of the functions using the cartesian coordinates for the moon have
-the same RA and Dec. 
+the same RA and Dec. This is most liekly due to the sufficiently far distance compared to the orbital parameters of a satellite. 
+Given the ISS, the RA and Dec will not be equivalent to the geodetic lat and long
 """
