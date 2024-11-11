@@ -25,6 +25,7 @@ TODO:
     -  uses the rotation matrix method to rotate both the position and
 velocity vectors from the question above through the angles ω, i and Ω in that order around
 the appropriate axes as discussed in class in Chapter 3. 
+   - OUtput the position and velocity vecotrs for the orbit
 """
 
 import math
