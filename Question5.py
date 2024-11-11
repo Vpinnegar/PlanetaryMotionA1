@@ -37,9 +37,14 @@ def rotate_oiO(x, y, z, vx, vy, vz, omega, i, Omega):
             i: float untis: radians
             OMega: float units: radians
         Output:
-            Right Ascension:float degrees
-            Declination: float degrees
+            x_rotated: float units: AU
+            y_rotated: float units: AU
+            z_rotated: float units: AU
+            vx_rotated: float units: AU/yer
+            vy_rotated: float units: AU/yr
+            vz_rotated: float units: AU/yr
         """
+        
     #Error Check
     if not isinstance(x, (int, float)):
         raise TypeError(f"Error: The ({x}) is not numeric")
