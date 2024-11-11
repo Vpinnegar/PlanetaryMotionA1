@@ -10,15 +10,15 @@ Example:
     
 Attributes:
     Inputs: 
-        Semi Major Axis a:
-        Eccentricity e: 
-        True Anomaly f:
-            radians
-        Standard Gravitational Parameter \mu:
+        Semi Major Axis a: Units: AU
+        Eccentricity e: Units: dimensionless
+        True Anomaly f: Units: radians
+            
+        Standard Gravitational Parameter \mu: Units: AU^3 yr^-2 M_s^-1
             G(m1 + m2)
-        Arguement of periapsis omega: float in radians
-        Inclination i: float radians
-        Longitude of ascending node Omega: float in radians
+        Arguement of periapsis omega: float Units: radians
+        Inclination i: float Units: radians
+        Longitude of ascending node Omega: float Units:radians
     
     
 TODO:
@@ -33,6 +33,22 @@ import Question4 as Q4
 import Question5 as Q5
 
 def calculatecartesian(a, e, i, Omega, omega, f, mu):
+    """ Input:
+            a: Semi major axis float units: AU
+            e: Eccentricty float units: dimensionless
+            f: True Anomaly float units: radians
+            mu: Standard gravitational constant float units:  AU^3 yr^-2 M_s^-1
+            omega: float units: radians
+            i: float untis: radians
+            OMega: float units: radians
+        Output:
+            x: x position Units: AU
+            y: y position Units: AU
+            z: z position Units: AU
+            vx: x velocty Units: AU/yr
+            vy: y velocty Units: AU/yr
+            vz: z velocty Units: AU/yr
+            """
     pandv = Q4.orbitposition_velocity(a, e, f, mu)
     heliopandv = Q5.rotate_oiO(pandv['x'], pandv['y'], pandv['z'], pandv['vx'], pandv['vy'], pandv['vz'], omega, i, Omega)
     return {
