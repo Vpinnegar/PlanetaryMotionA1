@@ -2,24 +2,22 @@
 """
 Planetary Motion Question 7
 
-Description: This module multiplies the position and velocity vectors through the angles omega, i and Omega,
-transforming it to the heliocentric form. 
+Description: PLot the planets plus pluto onto a 2D plot, and secondarily include Halley's comet adn Ceres' 
 
 Example:
         
     
 Attributes:
     Inputs: 
-        Semi Major Axis a:
-        Eccentricity e: 
-        True Anomaly f:
-            radians
-        Standard Gravitational Parameter \mu:
+        Semi Major Axis a: Units: AU
+        Eccentricity e: Units: dimensionless
+        True Anomaly f: Units: radians
+            
+        Standard Gravitational Parameter \mu: Units: AU^3 yr^-2 M_s^-1
             G(m1 + m2)
-        Arguement of periapsis omega: float in radians
-        Inclination i: float radians
-        Longitude of ascending node Omega: float in radians
-    
+        Arguement of periapsis omega: float Units: radians
+        Inclination i: float Units: radians
+        Longitude of ascending node Omega: float Units:radians
     
 TODO:
     -  plot the orbits of the planets and pluto on the heliocentric celiptic 
@@ -85,8 +83,8 @@ plt.ylabel('y (AU)')
 
 plt.legend()
 plt.grid(True)
-plt.xlim(-5,5)
-plt.ylim(-5,5)
+# plt.xlim(-5,5)
+# plt.ylim(-5,5)
 plt.show()
 
 df = pd.DataFrame(planetary_data)
@@ -117,6 +115,6 @@ plt.xlabel('x (AU)')
 plt.ylabel('y (AU)')
 plt.legend()
 plt.grid(True)
-# plt.xlim(-5,5)
-# plt.ylim(-5,5)
+plt.xlim(-5,5)
+plt.ylim(-5,5)
 plt.show()
