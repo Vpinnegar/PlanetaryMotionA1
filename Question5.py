@@ -5,16 +5,14 @@ Planetary Motion Question 5
 Description: This module multiplies the position and velocity vectors through the angles omega, i and Omega,
 transforming it to the heliocentric form. 
 
-Example:
-        
     
 Attributes:
     Inputs: 
-        Positions components x , y, z: float distance unit
-        Velocity Components , vy, vz: float distance unit/time unit
-        Arguement of periapsis omega: float in radians
-        Inclination i: float radians
-        Longitude of ascending node Omega: float in radians
+        Positions components x , y, z: float  unit: AU
+        Velocity Components , vy, vz: float Units: AU/yr
+        Arguement of periapsis omega: float Units: radians
+        Inclination i: float UNits: radians
+        Longitude of ascending node Omega: float Units: radians
     
     
 TODO:
@@ -28,6 +26,20 @@ import numpy as np
 import Question4
 
 def rotate_oiO(x, y, z, vx, vy, vz, omega, i, Omega):
+    """ Input:
+            x: float units: AU
+            y: float units: AU
+            z: float units: AU
+            vx: float units: AU/yer
+            vy: float units: AU/yr
+            vz: float units: AU/yr
+            omega: float units: radians
+            i: float untis: radians
+            OMega: float units: radians
+        Output:
+            Right Ascension:float degrees
+            Declination: float degrees
+        """
     #Error Check
     if not isinstance(x, (int, float)):
         raise TypeError(f"Error: The ({x}) is not numeric")
