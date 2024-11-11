@@ -1,20 +1,20 @@
 # -*- coding: utf-8 -*-
-"""
-
 Planetary Motion Question 4
 
-Description: This module...
+Description: TThis module converts the orbital elements like Smei major axis, 
+eccentricity, and true anomaly and outputs the x,y,z cartesian positions and velocities of the orbiting body m2
+relative to m1. 
 
 Example:
         
     
 Attributes:
     Inputs: 
-        Semi Major Axis a:
-        Eccentricity e: 
-        True Anomaly f:
-            radians
-        Standard Gravitational Parameter \mu:
+        Semi Major Axis a: Units: AU
+        Eccentricity e: Units: dimensionless
+        True Anomaly f: Units: radians
+            
+        Standard Gravitational Parameter \mu: Units: AU^3 yr^-2 M_s^-1
             G(m1 + m2)
     
     
@@ -30,6 +30,21 @@ import Question3
 import numpy as np
 
 def orbitposition_velocity(a, e, f, mu):
+    """ Input:
+            a: Semi major axis float units: AU
+            e: Eccentricty float units: dimensionless
+            f: True Anomaly float units: radians
+            mu: Standard gravitational constant float units:  AU^3 yr^-2 M_s^-1
+        Output:
+            x: x position Units: AU
+            y: y position Units: AU
+            z: z position Units: AU
+            vx: x velocty Units: AU/yr
+            vy: y velocty Units: AU/yr
+            vz: z velocty Units: AU/yr
+            n: mean motion UNits: \sqrt(yr^-2 M_s^-1)
+            E: Eccentric Anomaly Units: Radians
+        """
     #Check for error 
     if not isinstance(e, (int, float)):
         raise TypeError(f"Error: The Eccentricity ({e}) is not numeric")
@@ -74,7 +89,6 @@ mu = 4*np.pi**2  # gravitational parameter for Earth in km^3/s^2
 result = orbitposition_velocity(a, e, f, mu)
 print("Positions", result['x'], result['y'], result['z'])
 print("Velocities ", result['vx'], result['vy'], result['vz'])
-
 
 
 
