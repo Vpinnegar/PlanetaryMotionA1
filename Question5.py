@@ -60,7 +60,7 @@ def rotate_oiO(x, y, z, vx, vy, vz, omega, i, Omega):
     if not isinstance(Omega, (int, float)):
         raise TypeError(f"Error: The ({Omega}) is not numeric")
     if i > np.pi:
-        raise ValueError(f"The value {i} exceeds the threshold for the True anomaly. This must be within range  0 < f < pi.")
+        raise ValueError(f"The value {i} exceeds the threshold for the inclination. This must be within range  0 < i < pi.")
     # rotate around z using arguemennt of perhelion, aligns the perihelion
     R_omega = np.array([
         [np.cos(omega), -np.sin(omega), 0],
